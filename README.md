@@ -1,37 +1,30 @@
 # lfs-auto
 
-## 介绍
-LFS教程自动构建脚本，从零开始构建一个Linux操作系统。
+##Introduction
+LFS tutorial automatically builds scripts to build a Linux operating system from scratch.
 
-## 实验环境
+##Experimental environment
+-We need to add a second disk to the virtual machine, no less than 30GB, to store the compiled LFS system files.
 
-- 虚拟机：VirtualBox 7.0。
-- 虚拟机系统版本：ubuntu 2404 desktop。
-- 需要给虚拟机增加第二块磁盘，不少于30G，用于存放编译出来LFS系统文件。
-
-## 构建LFS
-
-首先需要按照教程中创建一个新的**lfs**用户，修改`/etc/sudoers`文件，在其中添加：
+##Building LFS
+Firstly, you need to create a new * * lfs * * user according to the tutorial, modify the '/etc/sudoers' file, and add:
 
 ```
 lfs ALL=(ALL:ALL) NOPASSWD: ALL
 ```
 
-让lfs用户免密运行`sudo`命令，切换到**lfs**用户后，命令行运行：
+Ask the lfs user to run the 'sudo' command without password, switch to the * * lfs * * user, and run the command line:
 
 ```
 bash ./shell/lfs.sh /dev/[sd*] [format]
 ```
 
-如果给了format参数，则会将指定的磁盘重新进行格式化并进行分区。如果没有指定，则只会进行挂载。
+If the format parameter is given, the specified disk will be reformatted and partitioned. If not specified, only mounting will be performed.
 
-## LFS系统启动
+##LFS system startup
+After the LFS system is built, restart the virtual machine, press F12 when the virtual machine starts, and then select the second disk to boot up.
+After starting the login terminal, enter the username * * root * * and password * * root * * to log in.
 
-LFS系统构建完成后，重启虚拟机，在虚拟机启动时按下F12，然后选择第2块磁盘引导启动。
-
-启动到登录终端后，输入用户名**root**以及密码**lfs.12.1**进行登录。
-
-## 常见问题
-
-- 软件包现在慢/或者直接下载不了
-  - 可从http://ftp.lfs-matrix.net/pub/lfs/下载对应版本的源码压缩包，然后解压复制到对应sources目录下。
+##Frequently Asked Questions
+-The software package is currently slow or cannot be downloaded directly
+-Can be obtained from http://ftp.lfs-matrix.net/pub/lfs/ Download the corresponding version of the source code compressed file, then unzip and copy it to the corresponding sources directory.
