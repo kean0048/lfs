@@ -1,5 +1,5 @@
 
-Linux From Scratch - Version 12.1
+Linux From Scratch - Version 12.1-systemd
 Chapter 3. Packages and Patches
 
     Prev
@@ -95,6 +95,13 @@ Coreutils (9.4) - 5,840 KB:
     Download: https://ftp.gnu.org/gnu/coreutils/coreutils-9.4.tar.xz
 
     MD5 sum: 459e9546074db2834eefe5421f250025
+D-Bus (1.14.10) - 1,344 KB:
+
+    Home page: https://www.freedesktop.org/wiki/Software/dbus
+
+    Download: https://dbus.freedesktop.org/releases/dbus/dbus-1.14.10.tar.xz
+
+    MD5 sum: 46070a3487817ff690981f8cd2ba9376
 DejaGNU (1.6.3) - 608 KB:
 
     Home page: https://www.gnu.org/software/dejagnu/
@@ -301,11 +308,6 @@ Less (643) - 579 KB:
     Download: https://www.greenwoodsoftware.com/less/less-643.tar.gz
 
     MD5 sum: cf05e2546a3729492b944b4874dd43dd
-LFS-Bootscripts (20230728) - 33 KB:
-
-    Download: https://www.linuxfromscratch.org/lfs/downloads/12.1/lfs-bootscripts-20230728.tar.xz
-
-    MD5 sum: a236eaa9a1f699bc3fb6ab2acd7e7b6c
 Libcap (2.69) - 185 KB:
 
     Home page: https://sites.google.com/site/fullycapable/
@@ -505,13 +507,6 @@ Shadow (4.14.5) - 1,765 KB:
     Download: https://github.com/shadow-maint/shadow/releases/download/4.14.5/shadow-4.14.5.tar.xz
 
     MD5 sum: 452b0e59f08bf618482228ba3732d0ae
-Sysklogd (1.5.1) - 88 KB:
-
-    Home page: https://www.infodrom.org/projects/sysklogd/
-
-    Download: https://www.infodrom.org/projects/sysklogd/download/sysklogd-1.5.1.tar.gz
-
-    MD5 sum: c70599ab0d037fde724f7210c2c8d7f8
 Systemd (255) - 14,516 KB:
 
     Home page: https://www.freedesktop.org/wiki/Software/systemd/
@@ -529,13 +524,6 @@ Systemd Man Pages(255) - 652 KB:
     [Note] Note
 
     The Linux From Scratch team generates its own tarball of the man pages using the systemd source. This is done in order to avoid unnecessary dependencies.
-Sysvinit (3.08) - 263 KB:
-
-    Home page: https://savannah.nongnu.org/projects/sysvinit
-
-    Download: https://github.com/slicer69/sysvinit/releases/download/3.08/sysvinit-3.08.tar.xz
-
-    MD5 sum: 81a05f28d7b67533cfc778fcadea168c
 Tar (1.35) - 2,263 KB:
 
     Home page: https://www.gnu.org/software/tar/
@@ -569,11 +557,6 @@ Time Zone Data (2024a) - 444 KB:
     Download: https://www.iana.org/time-zones/repository/releases/tzdata2024a.tar.gz
 
     MD5 sum: 2349edd8335245525cc082f2755d5bf4
-Udev-lfs Tarball (udev-lfs-20230818) - 10 KB:
-
-    Download: https://anduin.linuxfromscratch.org/LFS/udev-lfs-20230818.tar.xz
-
-    MD5 sum: acd4360d8a5c3ef320b9db88d275dae6
 Util-linux (2.39.3) - 8,327 KB:
 
     Home page: https://git.kernel.org/pub/scm/utils/util-linux/util-linux.git/

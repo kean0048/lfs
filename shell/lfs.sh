@@ -96,14 +96,13 @@ for package in man-pages iana-etc glibc zlib bzip2 xz zstd file readline m4 bc f
 dejaGNU pkgconf binutils gmp mpfr mpc attr acl libcap libxcrypt shadow gcc ncurses sed psmisc gettext \
 bison grep bash libtool gdbm gperf expat inetutils less perl XML-Parser intltool autoconf automake openSSL \
 kmod libelf libffi python flit-Core wheel setuptools ninja meson coreutils check diffutils gawk findutils \
-groff grub gzip IPRoute2 kbd libpipeline make patch tar texinfo vim markupSafe jinja2 udev man-DB procps-ng \
-util-linux e2fsprogs sysklogd sysvinit; do
+groff grub gzip IPRoute2 kbd libpipeline make patch tar texinfo vim markupSafe jinja2 systemd dbus man-DB procps-ng \
+util-linux e2fsprogs; do
     echo -n ""
     insidechroot_install_package 8 $package
 done
 source chroot_bash.sh "$LFS" "/sources/insidechroot3.sh"
 
-insidechroot_install_package 9 lfs-bootscripts
 source chroot_bash.sh "$LFS" "/sources/insidechroot4.sh"
 
 boot_mounted=`mount | grep "$LFS/boot/efi"`
