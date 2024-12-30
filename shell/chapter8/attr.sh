@@ -3,10 +3,10 @@
             --sysconfdir=/etc \
             --docdir=/usr/share/doc/attr-$VERSION
 
-make
+make $MAKEFLAGS
 
 # set +exo pipefail
 # make check
 # set -exo pipefail
 
-make install
+make install $MAKEFLAGS

@@ -9,6 +9,6 @@ cd       build
              --disable-werror    \
              --enable-default-hash-style=gnu
 
-make
+make $MAKEFLAGS
 
-make install
+make $MAKEFLAGS install

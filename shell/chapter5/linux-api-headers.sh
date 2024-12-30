@@ -1,9 +1,9 @@
 if [ "`uname -m`" == "aarch64" ]; then
-    make ARCH=arm64 mrproper
-    make ARCH=arm64 headers
+    make $MAKEFLAGS ARCH=arm64 mrproper
+    make $MAKEFLAGS ARCH=arm64 headers
 else
-    make mrproper
-    make headers
+    make $MAKEFLAGS mrproper
+    make $MAKEFLAGS headers
 fi
 
 find usr/include -type f ! -name '*.h' -delete

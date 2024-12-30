@@ -76,7 +76,7 @@ EOF
 timedatectl set-local-rtc 1
 
 timedatectl list-timezones
-EOF
+
 systemctl disable systemd-timesyncd
 
 echo FONT=Lat2-Terminus16 > /etc/vconsole.conf

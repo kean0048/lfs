@@ -49,7 +49,7 @@ if ! grep -q "$LFS" /proc/mounts; then
     mkdir -pv $LFS/sources
     mkdir -pv $LFS/tools
     
-    sudo cp -rf /home/kean/Works/LFS-investigate/lfs-auto/sources/pub/lfs/lfs-packages/12.1/* $LFS/sources/
+    sudo cp -rf /home/kean/Works/lfs/sources/pub/lfs/lfs-packages/12.1/* $LFS/sources/
     mkdir -pv $LFS/{etc,var} $LFS/usr/{bin,lib,sbin}
     
     for i in bin lib sbin; do
@@ -113,7 +113,7 @@ if [ "$boot_mounted" == "" ] ;then
 fi
 
 source chroot_bash.sh "$LFS" "/sources/insidechroot5.sh"
-for package in linux mandoc popt efivar efibootmgr freeType grub cpio dracut; do
+for package in linux mandoc popt efivar efibootmgr freeType grub cpio dracut squashfs-tools; do
     echo -n ""
     insidechroot_install_package 10 $package
 done

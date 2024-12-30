@@ -45,11 +45,6 @@ Readline Upstream Fix Patch - 13 KB:
     Download: https://www.linuxfromscratch.org/patches/lfs/12.1/readline-8.2-upstream_fixes-3.patch
 
     MD5 sum: 9ed497b6cb8adcb8dbda9dee9ebce791
-Sysvinit Consolidated Patch - 2.5 KB:
-
-    Download: https://www.linuxfromscratch.org/patches/lfs/12.1/sysvinit-3.08-consolidated-1.patch
-
-    MD5 sum: 17ffccbb8e18c39e8cedc32046f3a475
 
 Total size of these patches: about 203.8 KB
 

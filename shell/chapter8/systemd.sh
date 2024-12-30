@@ -1,8 +1,6 @@
 sed -i -e 's/GROUP="render"/GROUP="video"/' \
        -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in
 
-patch -Np1 -i ../systemd-$VERSION-upstream_fixes-1.patch
-
 mkdir -p build
 cd       build
 
@@ -13,7 +11,7 @@ meson setup \
       -Dfirstboot=false             \
       -Dinstall-tests=false         \
       -Dldconfig=false              \
-      -Dsysusers=false              \
+      -Dsysusers=true               \
       -Drpmmacrosdir=no             \
       -Dhomed=disabled              \
       -Duserdb=false                \
@@ -24,14 +22,14 @@ meson setup \
       -Dnobody-group=nogroup        \
       -Dsysupdate=disabled          \
       -Dukify=disabled              \
-      -Ddocdir=/usr/share/doc/systemd-$VERSION \
+      -Ddocdir=/usr/share/doc/systemd-256.4 \
       ..
 
 ninja
 
 ninja install
 
-tar -xf ../../systemd-man-pages-$VERSION.tar.xz \
+tar -xf ../../systemd-man-pages-256.4.tar.xz \
     --no-same-owner --strip-components=1   \
     -C /usr/share/man
 

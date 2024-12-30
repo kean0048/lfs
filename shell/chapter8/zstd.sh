@@ -1,7 +1,7 @@
-make prefix=/usr
+make $MAKEFLAGS prefix=/usr
 
-make check
+make $MAKEFLAGS check
 
-make prefix=/usr install
+make $MAKEFLAGS prefix=/usr install
 
 rm -v /usr/lib/libzstd.a

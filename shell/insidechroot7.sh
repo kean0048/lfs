@@ -6,7 +6,7 @@ grub-install --bootloader-id=LFS --recheck
 
 efibootmgr | cut -f 1
 
-dracut --kver 6.7.4 /boot/initrd.img-6.7.4 --force
+dracut --kver 6.7.4 /boot/initrd.img-6.7.4 --force --nohostonly
 
 cat > /boot/grub/grub.cfg << EOF
 # Begin /boot/grub/grub.cfg

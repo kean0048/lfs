@@ -10,9 +10,9 @@ cd       build
     --disable-libstdcxx-pch         \
     --with-gxx-include-dir=/tools/$LFS_TGT/include/c++/$VERSION
 
-make 
+make $MAKEFLAGS 
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 if [ "`uname -m`" == "aarch64" ]; then
     rm -v $LFS/usr/lib64/lib{stdc++{,exp,fs},supc++}.la

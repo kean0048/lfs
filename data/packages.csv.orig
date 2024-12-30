@@ -507,20 +507,20 @@ Shadow (4.14.5) - 1,765 KB:
     Download: https://github.com/shadow-maint/shadow/releases/download/4.14.5/shadow-4.14.5.tar.xz
 
     MD5 sum: 452b0e59f08bf618482228ba3732d0ae
-Systemd (255) - 14,516 KB:
+Systemd (256.4) - 14,516 KB:
 
     Home page: https://www.freedesktop.org/wiki/Software/systemd/
 
-    Download: https://github.com/systemd/systemd/archive/v255/systemd-255.tar.gz
+    Download: https://github.com/systemd/systemd/archive/v256.4/systemd-256.4.tar.gz
 
-    MD5 sum: 521cda27409a9edf0370c128fae3e690
+    MD5 sum: 03bd1ff158ec0bc55428c77a8f8495bd
 Systemd Man Pages(255) - 652 KB:
 
     Home page: https://www.freedesktop.org/wiki/Software/systemd/
 
-    Download: https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-255.tar.xz
+    Download: https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-256.4.tar.xz
 
-    MD5 sum: 1ebe54d7a80f9abf8f2d14ddfeb2432d
+    MD5 sum: 8dbcf0ff0d8e5e9d3565f9d2fc153310
     [Note] Note
 
     The Linux From Scratch team generates its own tarball of the man pages using the systemd source. This is done in order to avoid unnecessary dependencies.

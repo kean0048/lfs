@@ -34,9 +34,9 @@ cd       build
     --disable-libstdcxx       \
     --enable-languages=c,c++ 
 
-make
+make $MAKEFLAGS
 
-make install
+make $MAKEFLAGS install
 
 cd ..
 cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \

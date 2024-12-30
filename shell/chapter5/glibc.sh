@@ -22,9 +22,9 @@ echo "rootsbindir=/usr/sbin" > configparms
       --disable-nscd                     \
       libc_cv_slibdir=/usr/lib
 
-make 
+make $MAKEFLAGS 
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 sed '/RTLDLIST=/s@/usr@@g' -i $LFS/usr/bin/ldd
 
