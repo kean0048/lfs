@@ -14,8 +14,8 @@ cd       build
     --enable-64-bit-bfd        \
     --enable-default-hash-style=gnu
 
-make
+make $MAKEFLAGS
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 rm -v $LFS/usr/lib/lib{bfd,ctf,ctf-nobfd,opcodes,sframe}.{a,la}

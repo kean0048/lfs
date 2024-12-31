@@ -411,13 +411,13 @@ MPFR (4.2.1) - 1,459 KB:
     Download: https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.1.tar.xz
 
     MD5 sum: 523c50c6318dde6f9dc523bc0244690a
-Ncurses (6.4-20230520) - 2,156 KB:
+Ncurses (6.5) - 2,156 KB:
 
     Home page: https://www.gnu.org/software/ncurses/
 
-    Download: https://anduin.linuxfromscratch.org/LFS/ncurses-6.4-20230520.tar.xz
+    Download: https://invisible-mirror.net/archives/ncurses/ncurses-6.5.tar.gz
 
-    MD5 sum: c5367e829b6d9f3f97b280bb3e6bfbc3
+    MD5 sum: ac2d2629296f04c8537ca706b6977687
 Ninja (1.11.1) - 225 KB:
 
     Home page: https://ninja-build.org/
@@ -507,20 +507,20 @@ Shadow (4.14.5) - 1,765 KB:
     Download: https://github.com/shadow-maint/shadow/releases/download/4.14.5/shadow-4.14.5.tar.xz
 
     MD5 sum: 452b0e59f08bf618482228ba3732d0ae
-Systemd (256.4) - 14,516 KB:
+Systemd (257) - 14,516 KB:
 
     Home page: https://www.freedesktop.org/wiki/Software/systemd/
 
-    Download: https://github.com/systemd/systemd/archive/v256.4/systemd-256.4.tar.gz
+    Download: https://github.com/systemd/systemd/archive/v257/systemd-257.tar.gz
 
-    MD5 sum: 03bd1ff158ec0bc55428c77a8f8495bd
-Systemd Man Pages(255) - 652 KB:
+    MD5 sum: a51c7f9ab0d8b0a08dcf14bea2b6a5cb
+Systemd Man Pages (257) - 691.6 KB:
 
     Home page: https://www.freedesktop.org/wiki/Software/systemd/
 
-    Download: https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-256.4.tar.xz
+    Download: https://anduin.linuxfromscratch.org/LFS/systemd-man-pages-257.tar.xz
 
-    MD5 sum: 8dbcf0ff0d8e5e9d3565f9d2fc153310
+    MD5 sum: ac0b54961b1f20474fdff0927bc8be14
     [Note] Note
 
     The Linux From Scratch team generates its own tarball of the man pages using the systemd source. This is done in order to avoid unnecessary dependencies.

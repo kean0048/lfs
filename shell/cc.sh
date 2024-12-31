@@ -114,12 +114,12 @@ while [ $# -gt 0 ]; do
     	  shift
     	  shift
     	  ;;
-    	-f|--format|f)
+    -f|--format|f)
     	  FORMAT=$2
     	  shift
     	  shift
     	  ;;
-    	-u|--umount|u)
+    -u|--umount|u)
     	  UNMOUNT=true
     	  shift
     	  ;;
@@ -143,23 +143,31 @@ if ! grep -q "$LFS" /proc/mounts; then
 	echo "Mount ${LFS_DISK}2 failed!"
 	exit 1
     fi
-
+    
+    sudo mount --bind /dev $LFS/dev
+    sudo mount -vt devpts devpts -o gid=5,mode=0620 $LFS/dev/pts
+    sudo mount -t sysfs sysfs $LFS/sys
+    sudo mount -vt tmpfs tmpfs $LFS/run
+    sudo mount -vt proc proc $LFS/proc
+    
+    mount_efi
+    
     sudo chown -v $USER "$LFS"
     cd "$LFS/sources"
     chmod ugo+x insidechroot*.sh
-	chmod ugo+x insidechrootpackageinstall.sh 
+    chmod ugo+x insidechrootpackageinstall.sh 
 fi
 
 function main()
 {
 	$UEFI && mount_efi
 	$INSIDECHROOT && insidechroot
-    $INSIDENONCHROOTPACKAGE && inside_nonchroot_install_package
-    $INSIDECHROOTPACKAGE && insidechroot_install_package
+    	$INSIDENONCHROOTPACKAGE && inside_nonchroot_install_package
+    	$INSIDECHROOTPACKAGE && insidechroot_install_package
     
-    $UNMOUNT && umount_lfs
+    	$UNMOUNT && umount_lfs
     
-    if [ $UNMOUNT == false ];then
+    	if [ $UNMOUNT == false ];then
     		umount_lfs
     	fi
 }

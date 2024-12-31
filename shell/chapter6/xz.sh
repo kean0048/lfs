@@ -5,8 +5,8 @@
             --docdir=/usr/share/doc/xz-5.4.6
 
 
-make
+make $MAKEFLAGS
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 rm -v $LFS/usr/lib/liblzma.la

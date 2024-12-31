@@ -14,6 +14,6 @@ mkdir -pv /var/lib/hwclock
             ADJTIME_PATH=/var/lib/hwclock/adjtime \
             --docdir=/usr/share/doc/util-linux-2.39.3
 
-make
+make $MAKEFLAGS
 
-make install
+make $MAKEFLAGS install

@@ -12,6 +12,6 @@ sh Configure -des                                        \
              -Dvendorarch=/usr/lib/perl5/$PERL_VERSION/vendor_perl
 
 
-make
+make $MAKEFLAGS
 
-make install
+make $MAKEFLAGS install

@@ -4,9 +4,9 @@
             --enable-install-program=hostname \
             --enable-no-install-program=kill,uptime
 
-make
+make $MAKEFLAGS
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 mv -v $LFS/usr/bin/chroot              $LFS/usr/sbin
 mkdir -pv $LFS/usr/share/man/man8

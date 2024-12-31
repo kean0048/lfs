@@ -1,5 +1,5 @@
 ./configure --prefix=/usr
 
-make
+make $MAKEFLAGS
 
-make install
+make $MAKEFLAGS install

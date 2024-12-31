@@ -3,8 +3,8 @@
             --host=$LFS_TGT                    \
             --without-bash-malloc
 
-make
+make $MAKEFLAGS
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 ln -sv bash $LFS/bin/sh

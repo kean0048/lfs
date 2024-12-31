@@ -6,8 +6,12 @@ grub-install --bootloader-id=LFS --recheck
 
 efibootmgr | cut -f 1
 
-dracut --kver 6.7.4 /boot/initrd.img-6.7.4 --force --nohostonly
-
+dracut --omit "systemd systemd-initrd" -I "/usr/lib/libkmod.so" --kver 6.7.4 /boot/initrd.img-6.7.4 --force
+# dracut   --omit  "systemd dracut-systemd systemd-initrd systemd-networkd systemd-sysusers" \
+#        --add "dm dmsquash-live dmsquash-live-autooverlay kernel-modules bash" \  
+#        --zstd  --no-hostonly   --no-hostonly-cmdline   --no-hostonly-i18n  --force \
+#        --kver 6.7.4
+       
 cat > /boot/grub/grub.cfg << EOF
 # Begin /boot/grub/grub.cfg
 set default=0

@@ -1,4 +1,6 @@
 NCURSES_VERSION=`echo $VERSION | awk -F "-" '{print $1}'`
+echo $NCUNCURSES_VERSION
+echo $VERSION
 
 ./configure --prefix=/usr           \
             --mandir=/usr/share/man \
@@ -13,8 +15,8 @@ NCURSES_VERSION=`echo $VERSION | awk -F "-" '{print $1}'`
 make
 
 make DESTDIR=$PWD/dest install
-install -vm755 dest/usr/lib/libncursesw.so.$NCURSES_VERSION /usr/lib
-rm -v  dest/usr/lib/libncursesw.so.$NCURSES_VERSION
+install -vm755 dest/usr/lib/libncursesw.so.6.5 /usr/lib
+rm -v  dest/usr/lib/libncursesw.so.6.5
 sed -e 's/^#if.*XOPEN.*$/#if 1/' \
     -i dest/usr/include/curses.h
 cp -av dest/* /
@@ -26,7 +28,7 @@ done
 
 # ln -sfv libncursesw.so /usr/lib/libcurses.so
 
-cp -v -R doc -T /usr/share/doc/ncurses-$VERSION
+cp -v -R doc -T /usr/share/doc/ncurses-6.5
 
 make distclean
 ./configure --prefix=/usr    \

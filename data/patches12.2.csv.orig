@@ -1,0 +1,45 @@
+
+Linux From Scratch - Version 12.1
+Chapter 3. Packages and Patches
+
+    Prev
+
+    All Packages
+    Next
+
+    Final Preparations
+    Up
+    Home
+
+3.3. Needed Patches
+
+In addition to the packages, several patches are also required. These patches correct any mistakes in the packages that should be fixed by the maintainer. The patches also make small modifications to make the packages easier to work with. The following patches will be needed to build an LFS system:
+
+Bzip2 Documentation Patch - 1.6 KB:
+Download: https://www.linuxfromscratch.org/patches/lfs/12.2/bzip2-1.0.8-install_docs-1.patch
+
+MD5 sum: 6a5ac7e89b791aae556de0f745916f7f
+
+Coreutils Internationalization Fixes Patch - 164 KB:
+Download: https://www.linuxfromscratch.org/patches/lfs/12.2/coreutils-9.5-i18n-2.patch
+
+MD5 sum: 58961caf5bbdb02462591fa506c73b6d
+
+Expect GCC14 Patch - 7.8 KB:
+Download: https://www.linuxfromscratch.org/patches/lfs/12.2/expect-5.45.4-gcc14-1.patch
+
+MD5 sum: 0b8b5ac411d011263ad40b0664c669f0
+
+Glibc FHS Patch - 2.8 KB:
+Download: https://www.linuxfromscratch.org/patches/lfs/12.2/glibc-2.40-fhs-1.patch
+
+MD5 sum: 9a5997c3452909b1769918c759eff8a2
+
+Kbd Backspace/Delete Fix Patch - 12 KB:
+Download: https://www.linuxfromscratch.org/patches/lfs/12.2/kbd-2.6.4-backspace-1.patch
+
+MD5 sum: f75cca16a38da6caa7d52151f7136895
+
+Total size of these patches: about 188.2 KB
+
+In addition to the above required patches, there exist a number of optional patches created by the LFS community. These optional patches solve minor problems or enable functionality that is not enabled by default. Feel free to peruse the patches database located at https://www.linuxfromscratch.org/patches/downloads/ and acquire any additional patches to suit your system needs.

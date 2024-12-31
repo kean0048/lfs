@@ -4,6 +4,6 @@ export CFLAGS="$CFLAGS -Wno-error=null-dereference"
             --host=$LFS_TGT \
             --build=$(build-aux/config.guess)
 
-make
+make $MAKEFLAGS
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install

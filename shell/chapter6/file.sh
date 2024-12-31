@@ -4,13 +4,13 @@ pushd build
                --disable-libseccomp \
                --disable-xzlib      \
                --disable-zlib
-  make
+  make $MAKEFLAGS
 popd
 
 ./configure --prefix=/usr --host=$LFS_TGT --build=$(./config.guess)
 
-make FILE_COMPILE=$(pwd)/build/src/file
+make $MAKEFLAGS FILE_COMPILE=$(pwd)/build/src/file
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 rm -v $LFS/usr/lib/libmagic.la

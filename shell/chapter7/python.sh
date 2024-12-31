@@ -3,6 +3,6 @@
             --without-ensurepip
 
 
-make
+make $MAKEFLAGS
 
-make install
+make $MAKEFLAGS install

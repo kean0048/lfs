@@ -36,8 +36,8 @@ cd       build
     --enable-languages=c,c++
 
 
-make
+make $MAKEFLAGS
 
-make DESTDIR=$LFS install
+make $MAKEFLAGS DESTDIR=$LFS install
 
 ln -sv gcc $LFS/usr/bin/cc
