@@ -18,7 +18,7 @@ sh Configure -des                                         \
              -Duseshrplib                                 \
              -Dusethreads
 
-make
+make $MAKEFLAGS
 
 TEST_JOBS=$(nproc) make test_harness
 

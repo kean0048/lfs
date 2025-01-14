@@ -3,7 +3,7 @@
             --with-system-expat  \
             --enable-optimizations
 
-make
+make $MAKEFLAGS
 
 make install
 

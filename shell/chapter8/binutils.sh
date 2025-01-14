@@ -12,7 +12,7 @@ cd       build
              --with-system-zlib  \
              --enable-default-hash-style=gnu
 
-make tooldir=/usr
+make $MAKEFLAGS tooldir=/usr
 
 set +exo pipefail
 make -k check

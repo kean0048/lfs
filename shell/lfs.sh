@@ -120,3 +120,16 @@ done
 source chroot_bash.sh "$LFS" "/sources/insidechroot7.sh"
 
 source chroot_bash.sh "$LFS" "/sources/insidechroot6.sh"
+
+
+efi_mounted=`mount | grep "$LFS/boot/efi"`
+if [ "$efi_mounted" != "" ] ;then
+    umount -v $LFS/boot/efi
+fi
+
+lfs_mounted=`mount | grep "$LFS"`
+if [ "$lfs_mounted" != "" ] ;then
+    umount -v $LFS
+fi
+
+exit

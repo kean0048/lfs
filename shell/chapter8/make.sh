@@ -1,6 +1,6 @@
 ./configure --prefix=/usr
 
-make
+make $MAKEFLAGS
 
 chown -R tester .
 su tester -c "PATH=$PATH make check"

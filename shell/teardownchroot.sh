@@ -23,7 +23,13 @@ if [ "$proc_mounted" != "" ] ;then
     umount -v $LFS/proc
 fi
 
+efivar_mounted=`mount | grep "$LFS/sys/firmware/efi/efivars"`
+if [ "$efivar_mounted" != "" ] ;then
+    umount -v $LFS/sys/firmware/efi/efivars
+fi
+
 sys_mounted=`mount | grep "$LFS/sys"`
 if [ "$sys_mounted" != "" ] ;then
     umount -v $LFS/sys
 fi
+

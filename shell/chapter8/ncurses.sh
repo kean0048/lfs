@@ -12,7 +12,7 @@ echo $VERSION
             --enable-widec          \
             --with-pkg-config-libdir=/usr/lib/pkgconfig
 
-make
+make $MAKEFLAGS
 
 make DESTDIR=$PWD/dest install
 install -vm755 dest/usr/lib/libncursesw.so.6.5 /usr/lib
