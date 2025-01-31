@@ -172,5 +172,7 @@ function main()
     	fi
 }
 
+# sudo chroot /mnt/lfs /usr/bin/env -i HOME=/root TERM=xterm-256color 'PS1=(lfs chroot) \u:\w\$ ' PATH=/usr/bin:/usr/sbin MAKEFLAGS=-j14 TESTSUITEFLAGS=-j14 PACKAGES_FILE=packages.csv LFS_DISK=/dev/sda /bin/bash --login +h -c '/sources/insidechrootpackageinstall.sh 8 gcc'
+
 main
 

@@ -58,7 +58,7 @@ ff02::2   ip6-allrouters
 # End /etc/hosts
 EOF
 
-udevadm info -a -p /sys/class/video4linux/video0
+udevadm info -a -p /sys/class/video4linux/video0 > /dev/null
 cat > /etc/udev/rules.d/83-duplicate_devs.rules << "EOF"
 
 # Persistent symlinks for webcam and tuner
@@ -74,7 +74,8 @@ LOCAL
 EOF
 
 timedatectl set-local-rtc 1
-timedatectl list-timezones
+timedatectl set-timezones "Asia/Shanghai"
+# timedatectl list-timezones
 
 LC_ALL=en_US.UTF-8 locale language
 LC_ALL=en_US.UTF-8 locale charmap
@@ -88,7 +89,7 @@ KEYMAP=us
 FONT=Lat2-Terminus32
 EOF
 
-locale -a
+# locale -a
 
 cat > /etc/profile << "EOF"
 # Begin /etc/profile
@@ -278,7 +279,7 @@ done
 if [[ "$TERM" = linux ]]; then
   export LANG=C.UTF-8
 else
-  export LANG=<ll>_<CC>.<charmap><@modifiers>
+  export LANG=en_US.UTF-8
 fi
 EOF
 

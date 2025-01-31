@@ -65,17 +65,21 @@ fi
 cp -rf shell/* data/* "$LFS/sources"
 cd "$LFS/sources"
 
+# Check all exist packages, if not will download it
 source download.sh
 
+# Base check
 source versioncheck.sh
 
 export PATH="$LFS/tools/bin:$PATH"
 
+# Step 1 [out side of lfs]
 for package in binutils gcc linux-api-headers glibc libstdc++; do
     echo -n ""
     source packageinstall.sh 5 $package
 done
 
+# Step 2 [outside of lfs]
 for package in m4 ncurses bash coreutils diffutils file findutils gawk grep gzip make patch sed tar xz binutils gcc; do
     echo -n ""
     source packageinstall.sh 6 $package
@@ -84,14 +88,17 @@ done
 chmod ugo+x insidechroot*.sh
 chmod ugo+x insidechrootpackageinstall.sh 
 
+# Ready for inside of chroot
 source chroot_bash.sh "$LFS" "/sources/insidechroot.sh"
 
+# Stage 3 [inside of lfs]
 for package in gettext bison perl python texinfo util-linux; do
     echo -n ""
     insidechroot_install_package 7 $package
 done
 source chroot_bash.sh "$LFS" "/sources/insidechroot2.sh"
 
+# Stage 4 [inside of lfs]
 for package in man-pages iana-etc glibc zlib bzip2 xz zstd file readline m4 bc flex tcl expect \
 dejaGNU pkgconf binutils gmp mpfr mpc attr acl libcap libxcrypt shadow gcc ncurses sed psmisc gettext \
 bison grep bash libtool gdbm gperf expat inetutils less perl XML-Parser intltool autoconf automake openSSL \
@@ -102,9 +109,10 @@ util-linux e2fsprogs; do
     insidechroot_install_package 8 $package
 done
 source chroot_bash.sh "$LFS" "/sources/insidechroot3.sh"
-
 source chroot_bash.sh "$LFS" "/sources/insidechroot4.sh"
 
+# Stage 5 include UEFI installation
+# >mount uefi partition first
 boot_mounted=`mount | grep "$LFS/boot/efi"`
 if [ "$boot_mounted" == "" ] ;then
     sudo mkdir -pv "$LFS/boot/efi"
@@ -112,24 +120,24 @@ if [ "$boot_mounted" == "" ] ;then
       "$LFS/boot/efi"
 fi
 
-source chroot_bash.sh "$LFS" "/sources/insidechroot5.sh"
-for package in linux mandoc popt efivar efibootmgr freeType grub cpio dracut; do
+source chroot_bash.sh "$LFS" "/sources/insidechroot5.sh"        # fstab create
+for package in linux mandoc popt efivar efibootmgr freeType grub cpio dracut which; do
     echo -n ""
     insidechroot_install_package 10 $package
 done
 source chroot_bash.sh "$LFS" "/sources/insidechroot7.sh"
-
 source chroot_bash.sh "$LFS" "/sources/insidechroot6.sh"
 
-
+# Unmount efi
 efi_mounted=`mount | grep "$LFS/boot/efi"`
 if [ "$efi_mounted" != "" ] ;then
-    umount -v $LFS/boot/efi
+    sudo umount -v $LFS/boot/efi
 fi
 
+# Unmount lfs
 lfs_mounted=`mount | grep "$LFS"`
 if [ "$lfs_mounted" != "" ] ;then
-    umount -v $LFS
+    sudo umount -v $LFS
 fi
 
 exit
